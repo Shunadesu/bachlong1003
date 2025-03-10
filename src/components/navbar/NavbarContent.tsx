@@ -1,4 +1,3 @@
-import Image from "next/image"
 import SearchInput from "../input/SearchInput"
 import Link from "next/link"
 
@@ -13,9 +12,7 @@ const NavbarContent = () => {
                 className="flex flex-col justify-center items-center tracking-[0px]"
             >
                 <div className="w-[220px] h-[100px]">
-                    <Image 
-                    width={220}
-                    height={100}
+                    <img
                     src="https://bachlongmobile.com/assets/images/logo/logo-website-1.png" 
                     alt="logo" 
                     className="w-full h-full object-contain"/>

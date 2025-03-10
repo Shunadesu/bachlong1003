@@ -1,5 +1,4 @@
 import { fetchDailySales } from "@/lib/fetchDailySales";
-import Image from "next/image";
 import Link from "next/link";
 
 type ProductDetailsProps = {
@@ -17,12 +16,10 @@ export default async function ProductDetails({ params }: ProductDetailsProps) {
     <div className="flex justify-center items-center h-full p-6 gap-4">
       <div className="w-full max-w-[1200px] grid grid-cols-1 md:grid-cols-2 p-6 border rounded-lg shadow-lg bg-white gap-4">
         <div className="flex justify-center">
-          <Image
-          src={product.image.url}
-          alt={product.name}
-          className="w-full max-w-[500px] object-cover rounded-lg shadow-md"
-          height={500}
-          width={500}
+          <img
+            src={product.image.url}
+            alt={product.name}
+            className="w-full max-w-[500px] object-cover rounded-lg shadow-md"
           />
         </div>
         <div className="flex flex-col justify-center gap-4">
