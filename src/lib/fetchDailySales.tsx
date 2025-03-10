@@ -1,4 +1,4 @@
-import { Product } from "../constants/Product";
+import { Product } from "../constant/Product";
 
 export async function fetchDailySales(): Promise<Product[]> {
   try {
