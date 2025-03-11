@@ -39,7 +39,6 @@ const Blog = () => {
     loadBlogs();
   }, [page]);
 
-
   return (
     <div className="min-h-[80vh] p-6 flex flex-col items-center gap-6">
       <h1 className="text-4xl uppercase gradient-text font-bold text-gray-800 mb-6">Blog Posts</h1>
@@ -53,7 +52,11 @@ const Blog = () => {
       ) : (
         <div className="w-full max-w-[1440px] grid grid-cols-1 xl:grid-cols-3 gap-6">
           {blogs.map((blog) => (
-            <Link href={blog.post_url} key={blog.post_id} className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <Link 
+              href={`/blog/${blog.identifier}`} // Use identifier as the URL key
+              key={blog.post_id} 
+              className="bg-white shadow-lg rounded-lg overflow-hidden"
+            >
               <img src={blog.featured_image} alt={blog.title} className="w-full h-64 object-cover" />
               <div className="p-4">
                 <h2 className="text-2xl line-clamp-2 font-semibold text-gray-900">{blog.title}</h2>

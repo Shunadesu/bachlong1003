@@ -10,4 +10,9 @@ export interface BlogPost {
   };
   author_name?: string; 
   author_url?: string;
+  identifier?: string;
+  content_heading?: string;
+  creation_time?: string;
+  filtered_content?: string;
+  short_content?: string;
 }
