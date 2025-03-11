@@ -41,8 +41,8 @@ const Blog = () => {
 
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6 flex flex-col items-center gap-4">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">Blog Posts</h1>
+    <div className="min-h-screen p-6 flex flex-col items-center gap-6">
+      <h1 className="text-4xl uppercase gradient-text font-bold text-gray-800 mb-6">Blog Posts</h1>
 
       {loading ? (
         <div className="text-lg w-full h-full text-gray-600 flex justify-center items-center">
