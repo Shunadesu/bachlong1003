@@ -2,7 +2,7 @@ import { BlogPost } from "@/constant/BlogPost";
 
 export async function fetchBlog(page: number = 1): Promise<{ items: BlogPost[], total_pages: number }> {
     try {
-      const res = await fetch(`http://localhost:3000/api/blog?page=${page}`, { cache: "no-store" });
+      const res = await fetch(`https://testting1003-ef51.vercel.app/api/blog?page=${page}`, { cache: "no-store" });
   
       if (!res.ok) throw new Error("Failed to fetch Blog");
   

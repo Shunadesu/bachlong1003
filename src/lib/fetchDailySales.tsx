@@ -1,7 +1,7 @@
 import { Product } from "../constant/Product";
 export async function fetchDailySales(): Promise<Product[]> {
   try {
-    const res = await fetch(`http://localhost:3000/api/daily-sales`, { cache: "no-store" }); 
+    const res = await fetch(`https://testting1003-ef51.vercel.app/api/daily-sales`, { cache: "no-store" }); 
 
     if (!res.ok) throw new Error("Failed to fetch products");
 
