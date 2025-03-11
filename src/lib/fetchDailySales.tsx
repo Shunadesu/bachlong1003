@@ -1,8 +1,8 @@
 import { Product } from "../constant/Product";
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+// const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
 export async function fetchDailySales(): Promise<Product[]> {
   try {
-    const res = await fetch(`${API_URL}/api/daily-sales`, { cache: "no-store" }); 
+    const res = await fetch(`https://testting1003-ef51.vercel.app/api/daily-sales`, { cache: "no-store" }); 
 
     if (!res.ok) throw new Error("Failed to fetch products");
 
