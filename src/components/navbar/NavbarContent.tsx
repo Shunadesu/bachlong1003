@@ -25,8 +25,8 @@ const NavbarContent = () => {
                 PRODUCT
             </Link>
 
-            <Link href={'/store'}>
-                STORE
+            <Link href={'/blog'}>
+                BLOGS
             </Link>
 
             <Link href={'/support'}>

@@ -1,15 +1,8 @@
+import { Product } from "@/constant/Product";
 import { NextResponse } from "next/server";
 
 const API_URL = "https://beta-api.bachlongmobile.com/graphql";
 
-interface Product {
-  sku: string;
-  name: string;
-  url_key: string;
-  image: { url: string };
-  sale_price: number;
-  price_original: number;
-}
 
 async function fetchPage(page: number, pageSize: number) {
   try {
