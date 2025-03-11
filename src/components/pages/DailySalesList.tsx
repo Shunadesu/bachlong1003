@@ -64,11 +64,11 @@ export function DailySalesList() {
   if (products.length === 0) return <p>No products available</p>;
 
   const settings = {
-    autoplay: true,
+    autoplay: false,
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: window.innerWidth > 1440 ? 5 : window.innerWidth > 1024 ? 4 : window.innerWidth > 768 ? 3 : 1,
     slidesToScroll: 1,
     autoplaySpeed: 3000,
     pauseOnHover: true,
@@ -77,16 +77,16 @@ export function DailySalesList() {
   };
 
   return (
-    <div className="w-full">
-      <div className="slider-container w-full max-w-[1440px] mx-auto">
+    <div className="w-full flex justify-center items-center">
+      <div className="slider-container xl:max-w-[1440px] lg:max-w-[1024px] md:max-w-[768px] sm:max-w-[640px] max-w-[400px] w-full">
         <Slider {...settings} className="cursor-grab">
           {products.map((product, index) => (
             <div
               key={index}
-              className="border items-center !w-[265px] border-gray-200 bg-white p-4 !rounded-lg !flex gap-4 flex-col transition-all duration-300 hover:shadow-xl hover:border-red-400 justify-self-center"
+              className="border items-center xl:!w-[265px] lg:!w-[245px] md:!w-[225px] w-full border-gray-200 bg-white p-4 !rounded-lg !flex gap-4 flex-col transition-all duration-300 hover:shadow-xl hover:border-red-400 md:justify-self-center "
               onClick={() => handleLinkClick(`/product/${product.sku}`)}
             >
-              <div className="relative flex transition-all duration-300 w-[160px] h-[160px] hover:scale-105">
+              <div className="relative flex transition-all duration-300 xl:w-[160px] xl:h-[160px] lg:w-[150] lg:h-[150] sm:w-[120] sm:h-[120] hover:scale-105">
                 <img
                   src={product.image.url}
                   alt={product.name}
@@ -99,7 +99,7 @@ export function DailySalesList() {
                 />
               </div>
 
-              <div className="w-full text-black font-bold text-center text-[12px] bg-amber-400 rounded-lg p-2">
+              <div className="lg:w-full text-black font-bold text-center text-[12px] bg-amber-400 rounded-lg p-2">
                 Kết thúc: {timeLeft.days} Ngày - {String(timeLeft.hours).padStart(2, "0")}:
                 {String(timeLeft.minutes).padStart(2, "0")}:
                 {String(timeLeft.seconds).padStart(2, "0")}

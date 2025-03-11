@@ -43,7 +43,7 @@ const Banner = () => {
             <Slider {...settings} className='cursor-grab'>
                     {
                         imgSEO.map(el => (
-                            <div className="w-full max-h-[700px] h-full overflow-hidden" key={el.id}>
+                            <div className="w-full max-h-[700px] h-full overflow-hidden px-4" key={el.id}>
                                 <img src={el.img} alt='banner' className="w-full h-full object-contain" />
                             </div>
                         ))

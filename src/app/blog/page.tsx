@@ -41,7 +41,7 @@ const Blog = () => {
 
 
   return (
-    <div className="min-h-screen p-6 flex flex-col items-center gap-6">
+    <div className="min-h-[80vh] p-6 flex flex-col items-center gap-6">
       <h1 className="text-4xl uppercase gradient-text font-bold text-gray-800 mb-6">Blog Posts</h1>
 
       {loading ? (
@@ -53,20 +53,12 @@ const Blog = () => {
       ) : (
         <div className="w-full max-w-[1440px] grid grid-cols-1 xl:grid-cols-3 gap-6">
           {blogs.map((blog) => (
-            <Link href={'/#'} key={blog.post_id} className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <Link href={blog.post_url} key={blog.post_id} className="bg-white shadow-lg rounded-lg overflow-hidden">
               <img src={blog.featured_image} alt={blog.title} className="w-full h-64 object-cover" />
               <div className="p-4">
                 <h2 className="text-2xl line-clamp-2 font-semibold text-gray-900">{blog.title}</h2>
-                <a href={blog.author_url} className="text-gray-600 text-[14px]">By: {blog.author?.name || "Unknown Author"}</a>
+                <div className="text-gray-600 text-[14px]">By: {blog.author?.name || "Unknown Author"}</div>
                 <p className="text-gray-500 text-[14px]">Published on: <span className="font-bold">{new Date(blog.publish_time).toLocaleDateString("vi-VN")}</span></p>
-                <a
-                  href={blog.post_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 block text-yellow-500 hover:text-yellow-700"
-                >
-                  Read more →
-                </a>
               </div>
             </Link>
           ))}
